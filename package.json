@@ -1,0 +1,71 @@
+{
+  "name": "shared-state-hub",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Local AI shared state hub prototype.",
+  "bin": {
+    "shared-state-hub": "src/hub-cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zkw15555506767-boop/shared-state-hub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zkw15555506767-boop/shared-state-hub/issues"
+  },
+  "homepage": "https://github.com/zkw15555506767-boop/shared-state-hub#readme",
+  "scripts": {
+    "fixture:reduce": "node src/cli.js reduce fixtures/demo-events.json",
+    "fixture:join": "node src/cli.js join fixtures/demo-events.json --budget standard",
+    "db:init": "node src/cli.js init-db /private/tmp/shared-state-hub-dev.db",
+    "db:import": "node src/cli.js import-events fixtures/demo-events.json --db /private/tmp/shared-state-hub-dev.db",
+    "db:join": "node src/cli.js db-join --task task_shared_state_hub --budget standard --db /private/tmp/shared-state-hub-dev.db",
+    "serve": "node src/cli.js serve",
+    "setup": "node src/hub-cli.js setup",
+    "setup:yes": "node src/hub-cli.js setup --yes",
+    "app:status": "node src/hub-cli.js status",
+    "app:open": "node src/hub-cli.js open",
+    "app:stop": "node src/hub-cli.js stop",
+    "app:uninstall": "node src/hub-cli.js uninstall",
+    "dev:serve": "bash scripts/start-dev-server.sh",
+    "dev:local": "bash scripts/start-local-all.sh",
+    "dev:stop": "bash scripts/stop-dev-server.sh",
+    "dev:restart": "bash scripts/restart-dev-server.sh",
+    "setup:preview": "node src/install-agent-configs.js",
+    "setup:apply": "node src/install-agent-configs.js --apply",
+    "setup:apply:claude": "node src/install-agent-configs.js --apply --claude-only",
+    "setup:preview:codex": "node src/install-agent-configs.js --codex-only",
+    "setup:instructions:preview": "node src/install-agent-instructions.js",
+    "setup:instructions": "node src/install-agent-instructions.js --apply",
+    "doctor": "node src/doctor.js",
+    "capture:codex": "node src/capture/codex-watcher.js --since-start",
+    "capture:codex:scan": "node src/capture/codex-watcher.js --once",
+    "capture:claude": "node src/capture/claude-watcher.js --since-start",
+    "capture:claude:scan": "node src/capture/claude-watcher.js --once",
+    "capture:install:claude:preview": "node src/capture/install-claude-hooks.js",
+    "capture:install:claude": "node src/capture/install-claude-hooks.js --apply",
+    "capture:fixture": "node src/capture-fixture-test.js",
+    "storage:status": "node src/storage-cli.js status",
+    "storage:compact": "node src/storage-cli.js compact",
+    "storage:prune": "node src/storage-cli.js prune",
+    "storage:vacuum": "node src/storage-cli.js vacuum",
+    "storage:fixture": "node src/storage-fixture-test.js",
+    "setup:fixture": "node src/service-manager-fixture-test.js",
+    "http:fixture": "node src/http-fixture-test.js",
+    "mcp": "node src/mcp-server.js",
+    "mcp:fixture": "node src/mcp-fixture-test.js",
+    "agent:handoff": "node src/agent-handoff-fixture-test.js",
+    "codex:app-check": "node src/codex-app-check.js",
+    "agent:cli-check": "node src/agent-cli-check.js",
+    "claude:mcp-health": "node src/claude-mcp-health-check.js",
+    "connector:codex": "node src/cli.js connector codex --print --db /private/tmp/shared-state-hub-dev.db",
+    "connector:claude": "node src/cli.js connector claude-code --print --db /private/tmp/shared-state-hub-dev.db",
+    "connector:cursor": "node src/cli.js connector cursor --print --db /private/tmp/shared-state-hub-dev.db",
+    "connector:trae": "node src/cli.js connector trae --print --db /private/tmp/shared-state-hub-dev.db",
+    "connector:fixture": "node src/connector-fixture-test.js",
+    "check": "node src/cli.js check fixtures/demo-events.json"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

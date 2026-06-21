@@ -1,0 +1,184 @@
+[
+  {
+    "id": "evt_001",
+    "type": "task.created",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:00:00+08:00",
+    "source": {
+      "client": "manual",
+      "connectorLevel": "L0",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "title": "Build Local AI Shared State Hub MVP",
+      "phase": "Milestone 0",
+      "status": "active",
+      "nextSteps": [
+        "Define event schema",
+        "Implement reducer",
+        "Generate Join Context"
+      ]
+    },
+    "visibility": "project",
+    "risk": "low"
+  },
+  {
+    "id": "evt_002",
+    "type": "agent.session_started",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:01:00+08:00",
+    "source": {
+      "client": "codex",
+      "sessionId": "codex_001",
+      "connectorLevel": "L3",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "currentActivity": "Scaffolding Milestone 0 prototype"
+    },
+    "visibility": "task",
+    "risk": "low"
+  },
+  {
+    "id": "evt_003",
+    "type": "user.prompt_submitted",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:02:00+08:00",
+    "source": {
+      "client": "codex",
+      "sessionId": "codex_001",
+      "connectorLevel": "L3",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "summary": "User clarified the Hub is a state relay, not an agent launcher.",
+      "context": [
+        "Default setup must not silently modify Codex, Claude Code, Cursor, or Trae config.",
+        "Agents should connect to Hub through explicit connectors or MCP.",
+        "Hub is responsible for state relay, Join Context, and user-visible audit."
+      ]
+    },
+    "visibility": "task",
+    "risk": "low"
+  },
+  {
+    "id": "evt_004",
+    "type": "task.claimed",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:03:00+08:00",
+    "source": {
+      "client": "codex",
+      "sessionId": "codex_001",
+      "connectorLevel": "L3",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "claimId": "claim_001",
+      "resourceType": "file",
+      "resource": "src/reducer.js",
+      "purpose": "Implement event-to-live-state reducer",
+      "expiresAt": "2026-06-19T10:00:00+08:00"
+    },
+    "visibility": "task",
+    "risk": "low"
+  },
+  {
+    "id": "evt_005",
+    "type": "file.edited",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:08:00+08:00",
+    "source": {
+      "client": "codex",
+      "sessionId": "codex_001",
+      "connectorLevel": "L3",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "summary": "Created reducer prototype for folding events into Live State."
+    },
+    "evidence": {
+      "files": [
+        "src/reducer.js"
+      ]
+    },
+    "visibility": "task",
+    "risk": "low"
+  },
+  {
+    "id": "evt_006",
+    "type": "tool.completed",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:10:00+08:00",
+    "source": {
+      "client": "codex",
+      "sessionId": "codex_001",
+      "connectorLevel": "L3",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "tool": "node",
+      "status": "failed",
+      "summary": "Initial fixture validation failed because event visibility was missing.",
+      "nextSteps": [
+        "Add required visibility and risk fields to all fixtures"
+      ]
+    },
+    "visibility": "task",
+    "risk": "low"
+  },
+  {
+    "id": "evt_007",
+    "type": "decision.recorded",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:12:00+08:00",
+    "source": {
+      "client": "codex",
+      "sessionId": "codex_001",
+      "connectorLevel": "L3",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "decision": "Milestone 0 will be zero-dependency Node.js ESM so it can run without network installs."
+    },
+    "visibility": "project",
+    "risk": "low"
+  },
+  {
+    "id": "evt_008",
+    "type": "agent.session_started",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:14:00+08:00",
+    "source": {
+      "client": "claude-code",
+      "sessionId": "claude_001",
+      "connectorLevel": "L3",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "currentActivity": "Joining to review Join Context output"
+    },
+    "visibility": "task",
+    "risk": "low"
+  },
+  {
+    "id": "evt_009",
+    "type": "task.claimed",
+    "taskId": "task_shared_state_hub",
+    "timestamp": "2026-06-19T09:15:00+08:00",
+    "source": {
+      "client": "claude-code",
+      "sessionId": "claude_001",
+      "connectorLevel": "L3",
+      "cwd": "/Users/wow/code/shared-state-hub"
+    },
+    "payload": {
+      "claimId": "claim_002",
+      "resourceType": "file",
+      "resource": "src/join-context.js",
+      "purpose": "Review and improve Join Context formatting",
+      "expiresAt": "2026-06-19T10:00:00+08:00"
+    },
+    "visibility": "task",
+    "risk": "low"
+  }
+]

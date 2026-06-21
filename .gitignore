@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Runtime data
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.pid
+
+# Local generated configs
+.mcp.json
+.claude/settings.local.json
+*.bak-*
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Temporary exports
+coverage/
+dist/
+.cache/

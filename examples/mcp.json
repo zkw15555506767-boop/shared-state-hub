@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "shared_state_hub": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/shared-state-hub/src/mcp-server.js"
+      ],
+      "env": {
+        "HUB_DB": "/absolute/path/to/hub.db"
+      }
+    }
+  }
+}
